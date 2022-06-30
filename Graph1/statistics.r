@@ -1,6 +1,8 @@
 library(igraph)
 library(influenceR)
-g <- csv.to.igraph("Graph1/datasets/data-filtered.csv")
+dat <- read.csv("Graph1/datasets/data-filtered.csv", header = TRUE)
+mat <- as.matrix(dat)
+g <- graph.data.frame(dat)
 
 print(length(g))
 print(ecount(g))
